@@ -1,4 +1,4 @@
-from flask import (Flask, render_template, jsonify, request, url_for, redirect)
+from flask import Flask, render_template, jsonify, request, url_for, redirect
 from werkzeug.http import HTTP_STATUS_CODES
 
 #################################################
@@ -30,6 +30,14 @@ def apis():
 
         f'BUDGET FILTER ONLY JSON:  /api/budget'
     )
+
+
+##########  ERROR 404 page not found ##################
+@app.errorhandler(404)
+def page_not_found(error):
+    """Custom 404 page."""
+    return render_template('404.html'), 404
+
 
 ##########  ERROR HANDLING ##################
 def error_response(status_code, message=None):
