@@ -1,6 +1,4 @@
 from flask import (Flask, render_template, jsonify, request, redirect)
-import pull
-import processInputs
 from werkzeug.http import HTTP_STATUS_CODES
 #################################################
 # Flask Setup
