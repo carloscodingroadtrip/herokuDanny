@@ -7,6 +7,8 @@ numpy
 pandas
 psycopg2-binary
 python-dateutil
+processInputs
+pull
 pytz
 six
 SQLAlchemy
