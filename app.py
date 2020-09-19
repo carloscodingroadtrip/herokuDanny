@@ -1,5 +1,12 @@
 from flask import (Flask, render_template, jsonify, request, redirect)
 from werkzeug.http import HTTP_STATUS_CODES
+from dataLayer import dataLayer
+
+#################################################
+# DB Setup Layer
+#################################################
+db = dataLayer()
+
 #################################################
 # Flask Setup
 #################################################
@@ -10,10 +17,15 @@ app.static_folder = 'static'
 # Flask Routes
 #################################################
 
-
 @app.route("/")
 def welcome():
     return render_template("index.html")
+
+
+@app.route("/api/babynames")
+def datarequest():
+    babyNamesData = db.get_BabyNames()
+    return jsonify(babyNamesData)
 
 
 @app.route('/apis')
@@ -21,7 +33,7 @@ def apis():
     return(
         f'AVAILABLE API ROUTES: <br>'
         f'_______________________________  <br>'
-        f'<br>ALL BABY NAMES....:  /api/babynames<br>'
+        f'<br>ALL BABY NAMES....: <br><a href="">/api/babynames</a><br>'
         f'<br>'
 
         f'BUDGET FILTER ONLY JSON:  /api/budget'
