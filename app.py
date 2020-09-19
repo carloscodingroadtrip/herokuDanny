@@ -17,15 +17,10 @@ app.static_folder = 'static'
 # Flask Routes
 #################################################
 
+
 @app.route("/")
 def welcome():
     return render_template("index.html")
-
-
-@app.route("/api/babynames")
-def datarequest():
-    babyNamesData = db.get_BabyNames()
-    return jsonify(babyNamesData)
 
 
 @app.route('/apis')
