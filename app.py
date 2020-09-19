@@ -1,11 +1,10 @@
 from flask import (Flask, render_template, jsonify, request, redirect)
 from werkzeug.http import HTTP_STATUS_CODES
-from datalayer import dataLayer
 
 #################################################
 # DB Setup Layer
 #################################################
-db = dataLayer()
+#db = dataLayer()
 
 #################################################
 # Flask Setup
