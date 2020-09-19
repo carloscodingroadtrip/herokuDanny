@@ -15,8 +15,6 @@ app.static_folder = 'static'
 #################################################
 # Flask Routes
 #################################################
-
-
 @app.route("/")
 def welcome():
     return render_template("index.html")
@@ -34,8 +32,6 @@ def apis():
     )
 
 ##########  ERROR HANDLING ##################
-
-
 def error_response(status_code, message=None):
     payload = {'error': HTTP_STATUS_CODES.get(status_code, 'Unknown error')}
     if message:
