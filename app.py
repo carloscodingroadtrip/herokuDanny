@@ -12,6 +12,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome():
-    return (
-        f"<h4>DANNY ROUTES.... :</h4>"
-    )
+    return render_template("index.html")
