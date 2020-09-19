@@ -10,7 +10,7 @@ from werkzeug.http import HTTP_STATUS_CODES
 # Flask Setup
 #################################################
 app = Flask(__name__)
-app.static_folder = 'static'
+# app.static_folder = 'static'
 
 #################################################
 # Flask Routes
